@@ -6,17 +6,6 @@ import random
 from itertools import combinations
 import time # Simulate AI thinking time
 
-# ==============================================================================
-# 🔴 ASSUMED EXISTING FUNCTIONS AND CONSTANTS (START)
-# Please ensure the following functions and constants are available in your environment:
-#   - ALL_CARDS_STR, EMOJI_CARDS
-#   - format_card_to_emoji(card_str)
-#   - convert_emoji_to_deuces_int(emoji_card)
-#   - calculate_equity(player_hand_int, board_int, simulations=10000)
-# ==============================================================================
-
-# Redefine necessary constants and functions to prevent runtime errors,
-# although you should ideally import them.
 
 RANKS = '23456789TJQKA'
 SUITS = 'shdc'
@@ -53,7 +42,7 @@ def convert_emoji_to_deuces_int(emoji_card):
 
 # Assume your calculate_equity function is correctly implemented and includes @st.cache_data
 @st.cache_data
-def calculate_equity(player_hand_int, board_int, simulations=10000):
+def calculate_equity(player_hand_int, board_int, simulations=50000):
     # This is your win rate calculation logic (using Monte Carlo simulation)
     evaluator = Evaluator()
     wins = 0
